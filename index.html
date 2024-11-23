@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>AluraGames</title>
+</head>
+
+<body>
+    <div id="content">
+        <header>
+            <nav class="menu">
+                <div class="logo">
+                    <h1>ALURAGAMES</h1>
+                </div>
+                <div class="search_container">
+                    <label for="product_search">
+                        <input type="search" id="product_search" placeholder="Buscar producto"
+                            aria-label="buscar producto" data-search>
+                    </label>
+                </div>
+                <div class="btn_add_container">
+                    <div class="modal" id="modal_add">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>Agrega tu Juego</h2>
+                            <form class="modal_add_content" data-form>
+                                <label for="game_name">
+                                    <input type="text" name="game_name" id="game_name" required
+                                        placeholder="Escribe el nombre del juego" data-name>
+                                </label>
+                                <label for="game_price">
+                                    <input type="number" name="game_name" step="0.01" id="game_price" required
+                                        placeholder="Escribe el precio del juego" data-price>
+                                </label>
+
+                                <label for="game_image">
+                                    <input type="text" name="game_image" id="game_image" required
+                                        placeholder="Escribe el URL de la imagen" data-image>
+                                </label>
+                                <fieldset>
+                                    <legend>Elige a que sección pertenece:</legend>
+                                    <div>
+                                        <input type="radio" id="singleplayer_game" name="gameMode" value="singleplayer" data-single />
+                                        <label for="singleplayer_game">Singleplayer</label>
+                                    </div>
+
+                                    <div>
+                                        <input type="radio" id="multiplayer_game" name="gameMode" value="multiplayer" data-multi />
+                                        <label for="multiplayer_game">Multiplayer</label>
+                                    </div>
+
+                                </fieldset>
+                                <button type="submit" id="add_card">Agregar</button>
+                            </form>
+                        </div>
+                    </div>
+                    <button arial aria-label="agregar producto" id="add_btn">Añadir Juego</button>
+
+                </div>
+
+            </nav>
+        </header>
+        <main>
+            <section class="best_games_container">
+                <h2>Singleplayer</h2>
+                <div class="product_container" data-singleplayer>
+
+
+                </div>
+
+            </section>
+            <section class="new_games_container">
+                <h2>Multiplayer</h2>
+                <div class="product_container" data-multiplayer>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <div></div>
+        </footer>
+    </div>
+    <script src="main.js"></script>
+    <script src="./js/showCard.js" type="module"></script>
+    <script src="./js/addGame.js" type="module"></script>
+    <script src="./js/filterGame.js" type="module"></script>
+
+</body>
+
+</html>
